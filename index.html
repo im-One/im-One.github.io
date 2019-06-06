@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -418,6 +418,10 @@ $(function () {
 <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <div class="music-player">
     
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s12">
             <div id="aplayer" class="music"></div>
@@ -439,7 +443,7 @@ $(function () {
         volume: Number('0.7'),
         listFolded: 'false' === 'true',
         listMaxHeight: '',
-        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://xxx.com/music1.mp3","cover":"http://xxx.com/music-cover1.png"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"/medias/music/music2.mp3","cover":"/medias/music/cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"http://xxx.com/music3.mp3","cover":"http://xxx.com/music-cover3.png"}]')
+        audio: JSON.parse('[{"name":"Summer【菊次郎的夏天】","artist":"久石让","url":"/music/Summer.mp3","cover":"/images/20130531162457903.jpg"}]')
     });
 });
 </script>
@@ -467,7 +471,56 @@ $(function () {
             
             <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/06/你好，第一个测试博客/">
+                    <a href="/2019/06/06/pi-liang-xiu-gai-xing-wei-zhu-shi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="批量修改行尾注释">
+                            
+                            <span class="card-title">批量修改行尾注释</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                问题背景代码规范检查时，禁止行尾注释，要使用javadoc方式注释（即 /**内容*/）。原因：在IDE编辑窗口，javadoc注释，不进入方法即可悬浮提示方法、参数、返回值的意义，可提高阅读效率。
+解决办法采用正则表达式匹配替换。
+1. 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                imOne
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/" target="_blank">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/正则表达式/" target="_blank">
+                            <span class="chip bg-color">正则表达式</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/06/06/ni-hao-di-yi-ge-ce-shi-bo-ke/">
                         <div class="card-image">
                             
                             

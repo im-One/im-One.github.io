@@ -4,9 +4,30 @@
   
     
     <entry>
+      <title>批量修改行尾注释</title>
+      <link href="/2019/06/06/pi-liang-xiu-gai-xing-wei-zhu-shi/"/>
+      <url>/2019/06/06/pi-liang-xiu-gai-xing-wei-zhu-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>代码规范检查时，禁止行尾注释，要使用javadoc方式注释（即 <code>/**内容*/</code>）。<br>原因：在IDE编辑窗口，javadoc注释，不进入方法即可悬浮提示方法、参数、返回值的意义，可提高阅读效率。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>采用<code>正则表达式</code>匹配替换。</p><pre class=" language-yaml"><code class="language-yaml">1.  查找：(^<span class="token punctuation">[</span>^\r\n<span class="token punctuation">]</span>+<span class="token punctuation">[</span>\S<span class="token punctuation">]</span>+<span class="token punctuation">[</span>^\r\n<span class="token punctuation">]</span>+)(//.+$)      替换为：\t\/\*\*$2\*\/\r\n$12.  查找：//      替换为空</code></pre><p>以上两步之后，最好人工再检查一遍，问题即可解决。<br>注意：步骤1仅能全局替换一次，多次执行将会出错</p><p>替换前：<br><img src="/images/1278050-20181228165647996-1422690998.png" alt="替换前"><br>替换后：<br><img src="/images/1278050-20181228170003549-744198574.png" alt="替换后"></p><ul><li>以上正则扩展说明：<br>()：标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。<br>$1-$9：存放着正则表达式中最近的9个正则表达式的匹配结果，这些结果按照子匹配的出现顺序依次排列。  </li></ul><hr><blockquote><p>原文首发于<a href="https://www.cnblogs.com/imone/p/10191372.html" target="_blank" rel="noopener">博客园-imOne</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 正则表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>你好，第一个测试博客</title>
-      <link href="/2019/06/06/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2019/06/06/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</url>
+      <link href="/2019/06/06/ni-hao-di-yi-ge-ce-shi-bo-ke/"/>
+      <url>/2019/06/06/ni-hao-di-yi-ge-ce-shi-bo-ke/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -21,7 +42,7 @@
       <link href="/2019/06/06/hello-world/"/>
       <url>/2019/06/06/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
       
